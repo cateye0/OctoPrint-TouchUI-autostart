@@ -5,7 +5,7 @@
 	var error = document.getElementById("error");
 	var port = ((window.navigator.userAgent.match(/P:([0-9]+)/g) || [""])[0].replace("P:", "")) || 5000;
 
-	var url = (window.navigator.userAgent.indexOf("IPv6") !== -1) ? "http://[::1]" : "http://localhost";
+	var url = (window.navigator.userAgent.indexOf("IPv6") !== -1) ? "http://127.0.0.1" : "http://127.0.0.1";
 	var prefix = (port == "80") ? url + "/" : url + ":"+port+"/";
 
 	var pingUrl = prefix + "plugin/touchui/ping";
