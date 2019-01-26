@@ -42,11 +42,6 @@ then
 			echo "TouchUI: haproxy has a listening IPv4 socket."
 		fi
 
-		if [ -n "$(echo $ns | grep 'tcp6 ')" ]; then
-			OCTOPI=" IPv6"
-			PORT="80"
-			echo "TouchUI: haproxy has a listening IPv6 socket."
-		fi
 	fi
 fi
 
@@ -83,7 +78,7 @@ CHROME_ARGS="	--no-first-run --kiosk $TOUCHUI_ARGS $TOUCHUI_DEBUG
 				--disable-java --disable-plugins --disable-extensions --disable-infobars
 				--user-agent='TouchUI (X11, Chrome $CHROME_VERSION$OCTOPI) (P:$PORT)'
 				--start-maximized --window-position=0,0 
-				http://localhost:$TOUCHUI_PORT/"
+				http://127.0.0.1:$TOUCHUI_PORT/"
 
 [ -r $TOUCHUI_DIR/calibration.sh ] && . $TOUCHUI_DIR/calibration.sh
 
